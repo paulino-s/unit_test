@@ -1,34 +1,19 @@
-"""Este es el docstring del m[odulo main."""
+import unittest
 
-#Docstring
-#__doc__
+class TestExample(unittest.TestCase):
 
-class User:
-    """Permite representar un usuario."""
+    def test_suma(self):
+        num1 = 3
+        num2 = 4
+        resultado = num1 + num2
 
-    def __init__(self, username: str, password: str) -> None:
-        """Permite instanciar un objeto de tipo User.
+        #7
+        #assert resultado == 7
 
-        Args:
-            username (str): El username del usuario
-            password (str): El password dell usuario
-        """
-
-        self.username = username
-        self.password = password
-
-def palindromo(sentence: str) -> bool:
-    """Permite conocer si un string es, o no, un palindromo.
-
-    Args:
-        sentence (str): String a evualuar.
-
-    Returns:
-        bool: Falso or True.
+        self.assertEqual(resultado, 7)
     
-    Examples:
-    
-    """
+    def test_resta(self):
+        self.assertEqual(100-50, 50)
 
-    sentence = sentence.lower().replace(' ', '')
-    return sentence == sentence[::-1]
+if __name__ == '__main__':
+    unittest.main()
